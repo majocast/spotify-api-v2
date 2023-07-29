@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import useAuth from './useAuth';
 import TopCard from './TopCard';
+import ListCard from './ListCard';
 import UserProfile from './UserProfile';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import SpotifyWebApi from'spotify-web-api-node';
 
 const spotifyApi = new SpotifyWebApi({
@@ -82,13 +83,32 @@ const Dashboard = ({ code }) => {
 
   return (
     <Container 
-      className = 'd-flex justify-content-center align-items-center'
+      className = 'justify-content-center align-items-center'
       style={{ minHeight: '100vh' }}
     >
-      <TopCard options={topArtists} />
-      <UserProfile options={profile} />
-      <TopCard options={topTracks} />
-      
+      <Row>
+        <Col>
+          <TopCard options={topArtists} />
+        </Col>
+        <Col>
+          <UserProfile options={profile} />
+        </Col>
+        <Col>
+          <TopCard options={topTracks} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <ListCard options={topArtists} />
+        </Col>
+        <Col>
+          
+        </Col>
+        <Col>
+          <ListCard options={topTracks} />
+        </Col>
+      </Row>
+
     </Container>
   )
 }
