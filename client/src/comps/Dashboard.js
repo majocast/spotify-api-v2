@@ -83,29 +83,29 @@ const Dashboard = ({ code }) => {
 
   return (
     <Container 
-      className = 'justify-content-center align-items-center'
-      style={{ minHeight: '100vh' }}
+      className = 'd-flex flex-column justify-content-center align-items-center'
+      style={{ fontWeight: '700', backgroundColor: 'black', minHeight: '100vh',gap: '1rem'}}
     >
-      <Row>
-        <Col>
-          <TopCard options={topArtists} />
+      <Row className='align-items-end mt-4'>
+        <Col >
+          <TopCard options={[topArtists, 'Top Artist']} />
         </Col>
-        <Col>
+        <Col className='d-flex align-items-center justify-content-center'>
           <UserProfile options={profile} />
         </Col>
-        <Col>
-          <TopCard options={topTracks} />
+        <Col className='d-flex align-items-center justify-content-center'>
+          <TopCard options={[topTracks, 'Top Track']} />
         </Col>
       </Row>
-      <Row>
-        <Col>
-          <ListCard options={topArtists} />
+      <Row className='mb-4'>
+        <Col style={{backgroundColor: 'black'}}>
+          <ListCard options={[topArtists, 'Next 5 Artists']} />
         </Col>
-        <Col>
+        <Col className='d-flex align-items-center justify-content-center'>
           
         </Col>
         <Col>
-          <ListCard options={topTracks} />
+          <ListCard options={[topTracks, 'Next 5 Tracks']} />
         </Col>
       </Row>
 

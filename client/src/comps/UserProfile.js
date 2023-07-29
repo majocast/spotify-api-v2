@@ -1,16 +1,17 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Image } from 'react-bootstrap';
 
 const UserProfile = (props) => {
   const profile = props.options;
   return (
-    <Card>
-      <Card.Body>
-        <img 
-        src={profile.image}
-        alt='avatar'
+    <Card className='text-white' style={{fontWeight: '700', background: '#2C2828'}}>
+      <Card.Body className='text-center'>
+        <Image 
+          src={profile.image}
+          alt='avatar'
+          roundedCircle
         />
-      <Card.Title>{profile.name}</Card.Title>
+      <Card.Title className='fs-4 my-2'>{profile.name}</Card.Title>
     </Card.Body>
   </Card>
   )
