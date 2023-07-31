@@ -6,12 +6,6 @@ const ListCard = (props) => {
   const cardTitle = props.options[1];
   const nextFive = element.slice(1,6);
 
-  const imageContainer = {
-    height: '0',
-    paddingBottom: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  }
-
   return (
     <Card className='text-white d-flex justify-content-center' border='dark' style={{ height: '100%', width: '18rem', background: '#2C2828', marginBottom: 'auto'}}>
       <Card.Header style={{background: '#2C2828'}} className='fs-4 text-center py-2'>{cardTitle}</Card.Header>

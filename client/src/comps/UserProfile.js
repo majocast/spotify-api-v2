@@ -4,7 +4,7 @@ import { Card, Image } from 'react-bootstrap';
 const UserProfile = (props) => {
   const profile = props.options;
   return (
-    <Card className='text-white' style={{fontWeight: '700', background: '#2C2828'}}>
+    <Card className='text-white' style={{width: '25rem', fontWeight: '700', background: '#2C2828'}}>
       <Card.Body className='text-center'>
         <Image 
           src={profile.image}
