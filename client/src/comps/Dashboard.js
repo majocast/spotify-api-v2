@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BsGithub } from 'react-icons/bs';
 import useAuth from './useAuth';
 import TopCard from './TopCard';
 import ListCard from './ListCard';
@@ -32,7 +33,12 @@ const Dashboard = ({ code }) => {
     {name: 'k-pop', color: 'background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(251,29,253,1) 50%, rgba(0,0,0,1) 100%);'},
   ]
 
-
+  const Logout = () => {
+    spotifyApi.setAccessToken(null);
+    spotifyApi.setRefreshToken(null);
+    window.location.reload();
+    console.log(localStorage);
+  }
 
   useEffect(() => {
     if(accessToken) {
@@ -124,25 +130,28 @@ const Dashboard = ({ code }) => {
       className = 'd-flex flex-column justify-content-center align-items-center'
       style={{ fontWeight: '700', minHeight: '100vh',gap: '1rem'}}
     >
-      <Row className='align-items-end mt-4'>
-        <Col >
+      <a href='https://github.com/majocast/spotify-api' target='_blank' rel='noopener noreferrer'>
+        <BsGithub size={50} style={{ position: 'absolute', color: 'white', top: '2%', left: '2%'}}/>
+      </a>
+      <Row className='align-items-end'>
+        <Col xs={12} sm={6} md={4} className='d-flex align-items-center justify-content-center'>
           <TopCard options={[topArtists, 'Top Artist']} />
         </Col>
-        <Col className='d-flex align-items-center justify-content-center'>
+        <Col xs={12} sm={6} md={4} className='d-flex align-items-center justify-content-center'>
           <UserProfile options={profile} />
         </Col>
-        <Col className='d-flex align-items-center justify-content-center'>
+        <Col xs={12} sm={6} md={4} className='d-flex align-items-center justify-content-center'>
           <TopCard options={[topTracks, 'Top Track']} />
         </Col>
       </Row>
       <Row className='mb-4'>
-        <Col>
+        <Col xs={12} md={4}>
           <ListCard options={[topArtists, 'Next 5 Artists']} />
         </Col>
-        <Col className='d-flex align-items-center justify-content-center'>
+        <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
           <ChartCard data={topGenres} />
         </Col>
-        <Col>
+        <Col xs={12} md={4}>
           <ListCard options={[topTracks, 'Next 5 Tracks']} />
         </Col>
       </Row>

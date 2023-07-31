@@ -9,7 +9,6 @@ app.use(bodyParser.json());
 
 app.post('/refresh', (req, res) => {
   const refreshToken = req.body.refreshToken;
-  console.log("hi");
   const spotifyApi = new SpotifyWebApi({
     redirectUri: 'http://localhost:3000',
     clientId: 'ed78470013204123a5c4a1501c41364e',
@@ -52,4 +51,12 @@ app.post('/login', (req, res) => {
     })
 })
 
-app.listen(3001);
+app.post('/logout', (req, res) => {
+  const refreshToken = req.body.refreshToken;
+  
+  res.sendStatus(200);
+})
+
+app.listen(3001, () => {
+  console.log('Listening on port 3001');
+});

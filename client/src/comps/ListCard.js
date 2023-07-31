@@ -7,7 +7,7 @@ const ListCard = (props) => {
   const nextFive = element.slice(1,6);
 
   return (
-    <Card className='text-white d-flex justify-content-center' border='dark' style={{ height: '100%', width: '18rem', background: '#2C2828', marginBottom: 'auto'}}>
+    <Card className='text-white d-flex justify-content-center' border='dark' style={{ height: '100%', background: '#2C2828', marginBottom: 'auto'}}>
       <Card.Header style={{background: '#2C2828'}} className='fs-4 text-center py-2'>{cardTitle}</Card.Header>
       <ListGroup className='list-group-flush mx-2 my-2 py-1 px-1 rounded' style={{backgroundColor: '#1F1C1C', height: '100%'}}>
         {nextFive.map((item, index) => {
