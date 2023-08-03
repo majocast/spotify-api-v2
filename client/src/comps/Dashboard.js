@@ -119,8 +119,8 @@ const Dashboard = ({ code }) => {
   }, [topArtists]);
       //
 
-  if(!topArtists ||!topTracks ||!profile) {
-    return <div>Loading...</div>
+  if(!topArtists ||!topTracks ||!profile || !topGenres) {
+    return <div className='w-100 h-100'>Loading...</div>
   } 
 
   
@@ -133,18 +133,18 @@ const Dashboard = ({ code }) => {
       <a href='https://github.com/majocast/spotify-api' target='_blank' rel='noopener noreferrer'>
         <BsGithub size={50} style={{ position: 'absolute', color: 'white', top: '2%', left: '2%'}}/>
       </a>
-      <Row className='align-items-end'>
-        <Col xs={12} sm={6} md={4} className='d-flex align-items-center justify-content-center'>
+      <Row className='align-items-end w-100'>
+        <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
           <TopCard options={[topArtists, 'Top Artist']} />
         </Col>
-        <Col xs={12} sm={6} md={4} className='d-flex align-items-center justify-content-center'>
+        <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
           <UserProfile options={profile} />
         </Col>
-        <Col xs={12} sm={6} md={4} className='d-flex align-items-center justify-content-center'>
+        <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
           <TopCard options={[topTracks, 'Top Track']} />
         </Col>
       </Row>
-      <Row className='mb-4'>
+      <Row className='align-items-top w-100 h-90'>
         <Col xs={12} md={4}>
           <ListCard options={[topArtists, 'Next 5 Artists']} />
         </Col>
