@@ -7,6 +7,7 @@ import ProcessGenres from './ProcessGenres';
 import UserProfile from './UserProfile';
 import { Container, Row, Col } from 'react-bootstrap';
 import SpotifyWebApi from'spotify-web-api-node';
+import '../styles/styles.css';
 import ChartCard from './ChartCard';
 
 const spotifyApi = new SpotifyWebApi({

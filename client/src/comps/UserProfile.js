@@ -16,7 +16,7 @@ const UserProfile = (props) => {
           }}
           roundedCircle
         />
-        <Card.Title className='fs-4 my-2'>{profile.name}</Card.Title>
+        <Card.Title className='profile-name my-2'>{profile.name}</Card.Title>
       </Card.Body>
     </Card>
   )

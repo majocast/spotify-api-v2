@@ -20,7 +20,7 @@ const TopCard = (props) => {
               roundedCircle
             />
           </a>
-        <Card.Text className='py-1'>
+        <Card.Text className='top-text py-1'>
             {element[0].name}
         </Card.Text>
       </Card.Body>
