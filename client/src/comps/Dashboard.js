@@ -129,7 +129,7 @@ const Dashboard = ({ code }) => {
   return (
     <Container 
       className = 'd-flex flex-column justify-content-center align-items-center'
-      style={{ fontWeight: '700', minHeight: '100vh',gap: '1rem'}}
+      style={{ fontWeight: '700', height: '100%',gap: '1rem'}}
     >
       <a href='https://github.com/majocast/spotify-api' target='_blank' rel='noopener noreferrer'>
         <BsGithub size={50} style={{ position: 'absolute', color: 'white', top: '2%', left: '2%'}}/>
@@ -145,7 +145,7 @@ const Dashboard = ({ code }) => {
           <TopCard options={[topTracks, 'Top Track']} />
         </Col>
       </Row>
-      <Row className='align-items-top w-100 h-90'>
+      <Row className='align-items-top w-100'>
         <Col xs={12} md={4}>
           <ListCard options={[topArtists, 'Next 5 Artists']} />
         </Col>
