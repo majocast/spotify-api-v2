@@ -12,7 +12,7 @@ const UserProfile = (props) => {
           className='my-3 d-block rounded'
           style={{
             objectFit: 'cover',
-            margin: '0 8rem',
+            margin: '0',
           }}
           roundedCircle
         />

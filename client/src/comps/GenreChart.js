@@ -51,7 +51,7 @@ export default class GenreChart extends PureComponent {
 
     return (
       <ResponsiveContainer className='responsiveContainer'>
-        <PieChart style={{width: '100%', height: '100%'}}>
+        <PieChart style={{}}>
           <Pie
             activeIndex={this.state.activeIndex}
             activeShape={renderActiveShape}

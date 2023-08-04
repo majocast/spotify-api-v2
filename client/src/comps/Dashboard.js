@@ -128,31 +128,31 @@ const Dashboard = ({ code }) => {
 
   return (
     <Container 
-      className = 'd-flex flex-column justify-content-center align-items-center'
-      style={{ fontWeight: '700', height: '100%',gap: '1rem'}}
+      className = 'd-flex flex-column justify-content-center align-items-center h-100'
+      style={{ fontWeight: '700', minHeight: '100vh', width: '100%', gap: '1rem'}}
     >
       <a href='https://github.com/majocast/spotify-api' target='_blank' rel='noopener noreferrer'>
-        <BsGithub size={50} style={{ position: 'absolute', color: 'white', top: '2%', left: '2%'}}/>
+        <BsGithub className='github' size={50} style={{ position: 'absolute', top: '2%', left: '2%'}}/>
       </a>
-      <Row className='align-items-end w-100'>
-        <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
+      <Row className='top-row align-items-end justify-content-center w-100'>
+        <Col xs={12} md={4} className='order-sm-1 d-flex align-items-center justify-content-center'>
           <TopCard options={[topArtists, 'Top Artist']} />
         </Col>
-        <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
+        <Col xs={{order: 'first'}} md={4} className='order-sm-2 d-flex align-items-center justify-content-center'>
           <UserProfile options={profile} />
         </Col>
-        <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
+        <Col xs={12} md={4} className='order-sm-3 d-flex align-items-center justify-content-center'>
           <TopCard options={[topTracks, 'Top Track']} />
         </Col>
       </Row>
-      <Row className='align-items-top w-100'>
-        <Col xs={12} md={4}>
+      <Row className='align-items-top justify-content-center w-100'>
+        <Col xs={12} md={4} className='order-sm-1'>
           <ListCard options={[topArtists, 'Next 5 Artists']} />
         </Col>
-        <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
+        <Col xs={{order: 'first'}} md={4} id='genre-cont' className=' order-sm-2 d-flex align-items-center justify-content-center'>
           <ChartCard data={topGenres} />
         </Col>
-        <Col xs={12} md={4}>
+        <Col xs={12} md={4} className='order-sm-3'>
           <ListCard options={[topTracks, 'Next 5 Tracks']} />
         </Col>
       </Row>

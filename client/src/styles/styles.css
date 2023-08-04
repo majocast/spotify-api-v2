@@ -10,3 +10,38 @@ img {
   font-size: 2rem;
   font-weight: 700;
 }
+
+.github {
+  color: white;
+  transition: 0.1s ease-in-out;
+}
+
+.github:hover {
+  color: green;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    gap: unset !important;
+  }
+
+  .row * {
+    margin: 0.5rem 0;
+  }
+
+  .top-row:nth-child(2) {
+    margin-top: 5rem !important;
+  }
+
+  #genre-cont {
+    min-height: 400px !important;
+    max-height: 400px !important;
+  }
+
+  .responsiveContainer {
+    min-height: 300px !important;
+    max-height: 300px !important;
+    padding: 0;
+    margin: 0;
+  }
+}
