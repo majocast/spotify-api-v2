@@ -7,7 +7,7 @@ const useAuth = (code) => {
   const [expiresIn, setExpiresIn] = useState();
 
   useEffect(() => {
-    axios.post('/login', {
+    axios.post('https://semiwrapped-api.onrender.com/login', {
       code, 
     }).then(res => {
       setAccessToken(res.data.accessToken);
@@ -22,7 +22,7 @@ const useAuth = (code) => {
   useEffect(() => {
     if(!refreshToken || !expiresIn) return;
     const interval = setInterval(() => {
-      axios.post('/refresh', {
+      axios.post('https://semiwrapped-api.onrender.com/refresh', {
         refreshToken,
         }).then(res => {
           setAccessToken(res.data.accessToken);
