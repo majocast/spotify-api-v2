@@ -1,21 +1,26 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
-const env = require('dotenv').config();
 app.use(cors({
-  origin: 'https://semiwrapped.onrender.com',
+  origin: process.env.REDIRECT_URI,
 }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+console.log(process.env.SPOTIFY_CLIENTID);
+console.log(process.env.SPOTIFY_SECRET);
+console.log(process.env.REDIRECT_URI);
 
 app.post('/refresh', (req, res) => {
   const refreshToken = req.body.refreshToken;
   const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'https://semiwrapped.onrender.com',
-    clientId: `${env.parsed.SPOTIFY_CLIENTID}`,
-    clientSecret: `${env.parsed.SPOTIFY_SECRET}`,
+    redirectUri: process.env.REDIRECT_URI,
+    clientId: process.env.SPOTIFY_CLIENTID,
+    clientSecret: process.env.SPOTIFY_SECRET,
     refreshToken
   })
 
@@ -35,11 +40,10 @@ app.post('/refresh', (req, res) => {
 
 app.post('/login', (req, res) => {
   const code = req.body.code;
-  console.log(process.env);
   const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'https://semiwrapped.onrender.com',
-    clientId: `${env.parsed.SPOTIFY_CLIENTID}`,
-    clientSecret: `${env.parsed.SPOTIFY_SECRET}`
+    redirectUri: process.env.REDIRECT_URI,
+    clientId: process.env.SPOTIFY_CLIENTID,
+    clientSecret: process.env.SPOTIFY_SECRET
   })
 
   spotifyApi.authorizationCodeGrant(code)
@@ -55,7 +59,6 @@ app.post('/login', (req, res) => {
     })
 })
 
-const port = process.env.PORT || 3001
-app.listen(port, () => {
-  console.log(`listning on port ${port}...`);
+app.listen(3001, () => {
+  console.log('Listening on port 3001');
 });
