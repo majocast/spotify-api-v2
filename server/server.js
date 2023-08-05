@@ -5,7 +5,9 @@ const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
 const env = require('dotenv').config();
-app.use(cors());
+app.use(cors({
+  origin: 'https://semiwrapped.onrender.com',
+}));
 app.use(bodyParser.json());
 
 app.post('/refresh', (req, res) => {
