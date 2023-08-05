@@ -1,5 +1,6 @@
 {
-  "name": "spotify-api-v2",
+  "homepage": "https://semiwrapped.onrender.com",
+  "name": "semiwrapped",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

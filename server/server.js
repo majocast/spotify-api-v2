@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.post('/refresh', (req, res) => {
   const refreshToken = req.body.refreshToken;
   const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'http://localhost:3000',
+    redirectUri: 'https://semiwrapped.onrender.com',
     clientId: `${env.parsed.SPOTIFY_CLIENTID}`,
     clientSecret: `${env.parsed.SPOTIFY_SECRET}`,
     refreshToken
@@ -35,9 +35,9 @@ app.post('/login', (req, res) => {
   const code = req.body.code;
   console.log(process.env);
   const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'http://localhost:3000',
-    clientId: 'ed78470013204123a5c4a1501c41364e',
-    clientSecret: 'ec40e753e3d64d60ba58cf60c3f86460'
+    redirectUri: 'https://semiwrapped.onrender.com',
+    clientId: `${env.parsed.SPOTIFY_CLIENTID}`,
+    clientSecret: `${env.parsed.SPOTIFY_SECRET}`
   })
 
   spotifyApi.authorizationCodeGrant(code)
