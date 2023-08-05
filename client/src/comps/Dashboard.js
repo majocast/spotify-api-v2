@@ -34,13 +34,6 @@ const Dashboard = ({ code }) => {
     {name: 'k-pop', color: 'background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(251,29,253,1) 50%, rgba(0,0,0,1) 100%);'},
   ]
 
-  const Logout = () => {
-    spotifyApi.setAccessToken(null);
-    spotifyApi.setRefreshToken(null);
-    window.location.reload();
-    console.log(localStorage);
-  }
-
   useEffect(() => {
     if(accessToken) {
       spotifyApi.setAccessToken(accessToken);

@@ -51,12 +51,6 @@ app.post('/login', (req, res) => {
     })
 })
 
-app.post('/logout', (req, res) => {
-  const refreshToken = req.body.refreshToken;
-  
-  res.sendStatus(200);
-})
-
 app.listen(3001, () => {
   console.log('Listening on port 3001');
 });
