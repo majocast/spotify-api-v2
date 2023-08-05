@@ -5,9 +5,7 @@ const bodyParser = require('body-parser');
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
-app.use(cors({
-  origin: process.env.REDIRECT_URI,
-}));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
