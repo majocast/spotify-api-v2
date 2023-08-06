@@ -13,7 +13,7 @@ const ListCard = (props) => {
         {nextFive.map((item, index) => {
           return (
             <a key={index} style={{textDecoration: 'none'}} href={item.externalUrl} target='_blank' rel='noopener noreferrer'>
-              <ListGroup.Item 
+              <ListGroup.Item
                 className='text-white d-flex align-items-center my-1 rounded'  
                 style={{flex: '1', padding: '0.25rem 0', margin: '0 0.5rem', background: '#2C2828', border: 'none'}}>
                   <Image 
