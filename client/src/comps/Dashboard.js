@@ -37,7 +37,6 @@ const Dashboard = ({ code }) => {
   useEffect(() => {
     if(accessToken) {
       spotifyApi.setAccessToken(accessToken);
-      console.log(accessToken);
     } else {
       return;
     }
@@ -49,7 +48,6 @@ const Dashboard = ({ code }) => {
     //fetch top artists
     spotifyApi.getMyTopArtists()
     .then((data) => {
-      console.log(data.body.items)
       const topArtists = data.body.items.map((artist) => ({
         name: artist.name,
         externalUrl: artist.external_urls.spotify,
@@ -57,8 +55,6 @@ const Dashboard = ({ code }) => {
         genres: artist.genres,
       }));
       setTopArtists(topArtists);
-      console.log(topArtists);
-      console.log(topArtists[0].genres);
     })
     .catch((err) => {
       console.log(err);
@@ -67,14 +63,12 @@ const Dashboard = ({ code }) => {
     //fetch top tracks
     spotifyApi.getMyTopTracks()
       .then((data) => {
-        console.log(data.body.items);
         const topTracks = data.body.items.map((tracks) => ({
           name: tracks.name,
           externalUrl: tracks.external_urls.spotify,
           image: tracks.album.images[1].url || null,
         }));
         setTopTracks(topTracks);
-        console.log(topTracks);
       })
       .catch((err) => {
         console.log(err);
@@ -89,7 +83,6 @@ const Dashboard = ({ code }) => {
           image: data.body.images[1].url || null,
         }
         setProfile(profile);
-        console.log(profile);
       })
       .catch((err) => {
         console.log(err);
@@ -100,7 +93,6 @@ const Dashboard = ({ code }) => {
   useEffect(() => {
     if(topArtists) {
       let topGenres = ProcessGenres(topArtists);
-      console.log(topGenres);
       setTopGenres(topGenres);
       const root = document.getElementById('root');
       const index = genreColor.findIndex((genre) => genre.name === topGenres[0].name);
