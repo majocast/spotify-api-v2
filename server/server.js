@@ -5,9 +5,15 @@ const bodyParser = require('body-parser');
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+    origin: process.env.REDIRECT_URI,
+    credentials: true
+  }
+));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+console.log(process.env.REDIRECT_URI);
 
 console.log(process.env.SPOTIFY_CLIENTID);
 console.log(process.env.SPOTIFY_SECRET);
@@ -38,6 +44,7 @@ app.post('/refresh', (req, res) => {
 
 app.post('/login', (req, res) => {
   const code = req.body.code;
+  console.log(code);
   const spotifyApi = new SpotifyWebApi({
     redirectUri: process.env.REDIRECT_URI,
     clientId: process.env.SPOTIFY_CLIENTID,
