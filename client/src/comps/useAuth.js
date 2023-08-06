@@ -14,6 +14,7 @@ const useAuth = (code) => {
       setRefreshToken(res.data.refreshToken);
       setExpiresIn(res.data.expiresIn);
     }).catch(() => {
+      window.location ='/';
     })
   }, [code]) 
 
