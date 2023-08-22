@@ -22,7 +22,7 @@ const useAuth = (code) => {
   useEffect(() => {
     if(!refreshToken || !expiresIn) return;
     const interval = setInterval(() => {
-      axios.post('http://localhost:3001/refresh', {
+      axios.post(`${process.env.REACT_APP_SERVER_URI}/refresh`, {
         refreshToken,
         }).then(res => {
           setAccessToken(res.data.accessToken);

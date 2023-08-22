@@ -20,6 +20,22 @@ img {
   color: green;
 }
 
+.logout {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.1s ease-in-out;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+.logout:hover {
+  background-color: green;
+}
+
 .card {
   box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
 }
