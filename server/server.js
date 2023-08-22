@@ -58,15 +58,6 @@ app.post('/login', (req, res) => {
     })
 })
 
-app.post('/logout', (req, res) => {
-  const code = null;
-  try {
-    res.json({ code });
-  } catch (error) {
-    console.log('error in server logging out');
-  }
-})
-
 const port = process.env.PORT || 3001
 
 app.listen(port, () => {

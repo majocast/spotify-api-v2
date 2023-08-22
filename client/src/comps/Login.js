@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=ed78470013204123a5c4a1501c41364e&response_type=code&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&scope=user-read-email%20user-read-private%20user-top-read`;
+const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=ed78470013204123a5c4a1501c41364e&response_type=code&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&scope=user-read-email%20user-read-private%20user-top-read&show_dialog=true`;
 
 const Login = () => {
   console.log(process.env.REACT_APP_REDIRECT_URI + ' login')

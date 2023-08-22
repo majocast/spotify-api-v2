@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { BsGithub } from 'react-icons/bs';
 import useAuth from './useAuth';
 import TopCard from './TopCard';
@@ -109,6 +110,10 @@ const Dashboard = ({ code }) => {
     return <div className='w-100 h-100'>Loading...</div>
   } 
 
+  const logout = async () => {
+    alert('You have been logged out');
+    window.location.href = `https://accounts.spotify.com/authorize?client_id=ed78470013204123a5c4a1501c41364e&response_type=code&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&scope=user-read-email%20user-read-private%20user-top-read&show_dialog=true`;
+  }
   
 
   return (
@@ -119,6 +124,7 @@ const Dashboard = ({ code }) => {
       <a href='https://github.com/majocast/spotify-api' target='_blank' rel='noopener noreferrer'>
         <BsGithub className='github' size={50} style={{ position: 'absolute', top: '2%', left: '2%'}}/>
       </a>
+      <button onClick={() => {logout()}} className='logout'>logout</button>
       <Row className='top-row align-items-end justify-content-center w-100'>
         <Col xs={12} md={4} className='order-sm-1 d-flex align-items-center justify-content-center'>
           <TopCard options={[topArtists, 'Top Artist']} />
