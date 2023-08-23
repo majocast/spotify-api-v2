@@ -1,6 +1,6 @@
 {
-  "homepage": "https://semiwrapped-api.onrender.com",
-  "name": "semiwrapped",
+  "homepage": "https://statsapp.onrender.com",
+  "name": "statsapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

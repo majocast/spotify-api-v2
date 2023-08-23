@@ -7,18 +7,18 @@ const TopCard = (props) => {
   return (
     <Card className='d-flex align-items-center justify-content-center' style={{ width: '100%', margin: '0', background: '#2C2828', marginBottom: '0'}}>
       <Card.Body className='text-center text-white'>
-        <Card.Title style={{ fontWeight: '700' }} className='fs-4'>{cardTitle}</Card.Title>
+        <Card.Title style={{ fontWeight: '700' }} className='text-md'>{cardTitle}</Card.Title>
           <a className='topCard' href={element[0].externalUrl} target='_blank' rel='noopener noreferrer'>
             <Image
               style={{
-                width: 'min(10rem, 15rem)',
-                height: 'min(10rem, 15rem)',
+                maxWidth: '10rem',
+                maxHeight: '10rem',
                 objectFit: 'cover',
               }}
               src={element[0].image}
               alt='avatar'
             />
-            <Card.Text className='topText py-1'>
+            <Card.Text className='py-1 text-md'>
               {element[0].name}
             </Card.Text>
           </a>

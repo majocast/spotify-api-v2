@@ -12,10 +12,8 @@ const ListCard = (props) => {
       <ListGroup className='list-group-flush mx-2 my-2 px-1 rounded' style={{backgroundColor: '#1F1C1C'}}>
         {nextFive.map((item, index) => {
           return (
-            <a key={index} style={{textDecoration: 'none'}} href={item.externalUrl} target='_blank' rel='noopener noreferrer'>
-              <ListGroup.Item
-                className='text-white d-flex align-items-center my-1 rounded'  
-                style={{flex: '1', padding: '0.25rem 0', margin: '0 0.5rem', background: '#2C2828', border: 'none'}}>
+            <a key={index} href={item.externalUrl} target='_blank' rel='noopener noreferrer' style={{textDecoration: 'none'}}>
+              <ListGroup.Item className='listCard d-flex align-items-center my-1 rounded'>
                   <Image 
                     style={{ 
                       margin: '0 1rem',
@@ -27,7 +25,9 @@ const ListCard = (props) => {
                     alt={item.name}
                     fluid 
                   />
-                {item.name}
+                  <Card.Text className='py-1 listText' style={{ maxWidth: 'calc(100% - 4rem)', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                    {item.name}
+                  </Card.Text>
               </ListGroup.Item>
             </a>
           )

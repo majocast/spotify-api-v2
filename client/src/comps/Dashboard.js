@@ -112,7 +112,6 @@ const Dashboard = ({ code }) => {
   } 
 
   const logout = async () => {
-    alert('You have been logged out');
     window.location.href = `https://accounts.spotify.com/authorize?client_id=ed78470013204123a5c4a1501c41364e&response_type=code&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&scope=user-read-email%20user-read-private%20user-top-read&show_dialog=true`;
   }
   
@@ -123,12 +122,12 @@ const Dashboard = ({ code }) => {
       style={{ fontWeight: '700', minHeight: '100vh', width: '100%', gap: '1rem'}}
     >
       <a href='https://www.spotify.com' target='_blank' rel='noopener noreferrer'>
-        <BiLogoSpotify className='spotify' size={50} style={{ color:'#1DB954', position: 'absolute', top: '2%', left: '2%'}}/>
-      </a>
-      <a href='https://github.com/majocast/spotify-api' target='_blank' rel='noopener noreferrer'>
-        <BsGithub className='github' size={50} style={{ position: 'absolute', bottom: '2%', left: '2%'}}/>
+        <BiLogoSpotify className='spotify' size={50} style={{ color:'#1DB954', position: 'absolute', top: '3%', left: '2%'}}/>
       </a>
       <button onClick={() => {logout()}} className='logout'>logout</button>
+      <a href='https://github.com/majocast/spotify-api' target='_blank' rel='noopener noreferrer'>
+        <BsGithub className='github' size={50} style={{ position: 'absolute', top: '2%', right: '2%'}}/>
+      </a>
       <Row className='top-row align-items-end justify-content-center w-100'>
         <Col xs={12} md={4} className='order-sm-1 d-flex align-items-center justify-content-center'>
           <TopCard options={[topArtists, 'Top Artist']} />

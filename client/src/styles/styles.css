@@ -12,12 +12,27 @@ img {
   color: #1DB954;
 }
 
-.topText {
-  font-size: 1.5rem;
+.listCard {
+  text-decoration: none;
+  color: white;
+  transition: 0.1s ease-in-out;
+  flex: 1; 
+  padding: 0.25rem 0; 
+  margin: 0 0.5rem; 
+  background: #2C2828; 
+  border: none;
 }
 
-.profile-name {
-  font-size: 2rem;
+.listCard:hover {
+  color: #1DB954;
+}
+
+.listText {
+  max-width: 100%;
+
+}
+
+.profileName {
   font-weight: 700;
 }
 
@@ -28,12 +43,22 @@ img {
 
 .github:hover {
   color: green;
+  transform: scale(1.1);
+}
+
+.spotify {
+  transform: scale(1.5);
+  transition: transform 0.1s ease-in-out;
+}
+
+.spotify:hover {
+  transform: scale(1.6);
 }
 
 .logout {
   position: absolute;
   top: 2%;
-  right: 2%;
+  right: 6%;
   font-weight: 700;
   text-transform: uppercase;
   transition: 0.1s ease-in-out;
