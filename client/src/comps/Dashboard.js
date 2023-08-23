@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BsGithub } from 'react-icons/bs';
+import { BiLogoSpotify } from 'react-icons/bi';
 import useAuth from './useAuth';
 import TopCard from './TopCard';
 import ListCard from './ListCard';
@@ -121,8 +122,11 @@ const Dashboard = ({ code }) => {
       className = 'd-flex flex-column justify-content-center align-items-center h-100'
       style={{ fontWeight: '700', minHeight: '100vh', width: '100%', gap: '1rem'}}
     >
+      <a href='https://www.spotify.com' target='_blank' rel='noopener noreferrer'>
+        <BiLogoSpotify className='spotify' size={50} style={{ color:'#1DB954', position: 'absolute', top: '2%', left: '2%'}}/>
+      </a>
       <a href='https://github.com/majocast/spotify-api' target='_blank' rel='noopener noreferrer'>
-        <BsGithub className='github' size={50} style={{ position: 'absolute', top: '2%', left: '2%'}}/>
+        <BsGithub className='github' size={50} style={{ position: 'absolute', bottom: '2%', left: '2%'}}/>
       </a>
       <button onClick={() => {logout()}} className='logout'>logout</button>
       <Row className='top-row align-items-end justify-content-center w-100'>

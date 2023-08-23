@@ -14,7 +14,6 @@ const UserProfile = (props) => {
             objectFit: 'cover',
             margin: '0',
           }}
-          roundedCircle
         />
         <Card.Title className='profile-name my-2'>{profile.name}</Card.Title>
       </Card.Body>

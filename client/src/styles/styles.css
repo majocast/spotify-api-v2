@@ -2,7 +2,17 @@ img {
   box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.top-text {
+.topCard {
+  text-decoration: none;
+  color: white;
+  transition: 0.1s ease-in-out;
+}
+
+.topCard:hover {
+  color: #1DB954;
+}
+
+.topText {
   font-size: 1.5rem;
 }
 
