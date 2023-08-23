@@ -25,7 +25,6 @@ const ListCard = (props) => {
                     }}
                     src={item.image}
                     alt={item.name}
-                    rounded
                     fluid 
                   />
                 {item.name}
